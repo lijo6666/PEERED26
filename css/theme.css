@@ -12,13 +12,17 @@
   /* Typography Fallbacks */
   --font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Poppins, sans-serif;
 
-  /* Global Spacing Grid (8px based) */
-  --spacing-unit: 8px;
-  --section-padding-desktop-y: 140px;
-  --section-padding-desktop-x: 8%;
-  --hero-padding-desktop-top: 180px;
-  --hero-padding-desktop-bottom: 160px;
-  --container-max-width: 1400px;
+  /* FLUID TYPOGRAPHY (using clamp) */
+  --font-hero-title: clamp(2.5rem, 6vw, 5rem);
+  --font-section-heading: clamp(2rem, 4vw, 3.5rem);
+  --font-subheading: clamp(1.25rem, 2vw, 2rem);
+  --font-body: clamp(1rem, 1.2vw, 1.125rem);
+  --font-small: clamp(0.875rem, 1vw, 1rem);
+
+  /* RESPONSIVE CONTAINER PADDING */
+  --container-padding: 80px;
+  --section-padding-y: 140px;
+  --container-max-width: 1440px;
   
   --card-padding-sm: 24px;
   --card-padding-md: 32px;
@@ -28,8 +32,7 @@
   --grid-gap: 32px;
   --button-padding-y: 16px;
   --button-padding-x: 28px;
-  --nav-height: 88px;
-  --nav-padding-x: 48px;
+  --nav-height: 72px;
 
   /* Border Radii */
   --radius-sm: 20px;
@@ -83,4 +86,25 @@
   --glow-color: rgba(30, 79, 255, 0.15);
   
   --hero-orb-opacity: 0.12;
+}
+
+/* MEDIA QUERIES FOR GLOBAL VARIABLES */
+@media (max-width: 1439px) {
+  :root {
+    --container-padding: 64px;
+  }
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --container-padding: 40px;
+    --section-padding-y: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --container-padding: 20px;
+    --section-padding-y: 72px;
+  }
 }
